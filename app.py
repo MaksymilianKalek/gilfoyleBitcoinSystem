@@ -5,7 +5,7 @@ from playsound import playsound
 
 URL = "https://cryptowat.ch/"
 
-isLower = True
+efficient = None
 
 while True:
     
@@ -19,15 +19,17 @@ while True:
     price = results.find_all("div", class_="text-right _2yv_NtK1R_FBVWqrvRdgcN _2jRRJJvarKXJGP9oRP-Bv0 _1TuQ_Cac70IaRi6hBmwL9")
     price = float(price[0].find("span", class_="price").text.strip())
 
-    rate = 4565.0
+    rate = 4507.0
 
-    if price < rate:
-        print(f"\n{price}$ is lower than {rate}$")
-        if isLower == False:
-            playsound("yousuffer.mp3")
-            isLower = True
-    else:
+    if price > rate:
         print(f"\n{price}$ is higher than {rate}$")
-        isLower = False
+        if efficient == True:
+            playsound("yousuffer.mp3")
+        efficient = False
+    else:
+        print(f"\n{price}$ is lower than {rate}$")
+        if efficient == False:
+            playsound("yousuffer.mp3")
+        efficient = True
 
-    time.sleep(3.0)
+    time.sleep(2.5)
