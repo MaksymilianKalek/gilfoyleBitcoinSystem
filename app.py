@@ -5,7 +5,7 @@ from playsound import playsound
 
 URL = "https://cryptowat.ch/"
 
-isLower = False
+isLower = True
 
 while True:
     
