@@ -19,15 +19,15 @@ while True:
     price = results.find_all("div", class_="text-right _2yv_NtK1R_FBVWqrvRdgcN _2jRRJJvarKXJGP9oRP-Bv0 _1TuQ_Cac70IaRi6hBmwL9")
     price = float(price[0].find("span", class_="price").text.strip())
 
-    rate = 4630.0
+    rate = 4565.0
 
     if price < rate:
-        print(f"\n{price} is lower than {rate}$")
+        print(f"\n{price}$ is lower than {rate}$")
         if isLower == False:
             playsound("yousuffer.mp3")
             isLower = True
     else:
-        print(f"\n{price} is higher than {rate}$")
+        print(f"\n{price}$ is higher than {rate}$")
         isLower = False
 
     time.sleep(3.0)
